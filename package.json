@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/nertc/AlgoStep#readme",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   }
