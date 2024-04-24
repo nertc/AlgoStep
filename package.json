@@ -1,0 +1,29 @@
+{
+  "name": "algostep",
+  "version": "1.0.0",
+  "description": "Variety of algorithms yielded step by step",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nertc/AlgoStep.git"
+  },
+  "keywords": [
+    "Algorithms"
+  ],
+  "author": "nertc (David Tsiklauri)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nertc/AlgoStep/issues",
+    "lint": "tsc"
+  },
+  "homepage": "https://github.com/nertc/AlgoStep#readme",
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
+}
