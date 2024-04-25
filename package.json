@@ -6,7 +6,8 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts"
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,7 @@
   "author": "nertc (David Tsiklauri)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nertc/AlgoStep/issues",
-    "lint": "tsc"
+    "url": "https://github.com/nertc/AlgoStep/issues"
   },
   "homepage": "https://github.com/nertc/AlgoStep#readme",
   "devDependencies": {
