@@ -1,5 +1,11 @@
 # algostep
 
+## 0.1.1
+
+### Patch Changes
+
+- b5cb5a0: Add changeset to npmignore
+
 ## 0.1.0
 
 ### Minor Changes
