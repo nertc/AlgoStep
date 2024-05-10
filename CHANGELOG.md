@@ -1,5 +1,11 @@
 # algostep
 
+## 0.1.2
+
+### Patch Changes
+
+- 917d12f: Edit Github workflows
+
 ## 0.1.1
 
 ### Patch Changes
