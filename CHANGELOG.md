@@ -1,5 +1,11 @@
 # algostep
 
+## 0.1.3
+
+### Patch Changes
+
+- 911fc95: Add pnpm install to publish workflow
+
 ## 0.1.2
 
 ### Patch Changes
