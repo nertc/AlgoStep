@@ -1,11 +1,21 @@
-name: CI
+name: Prepare Version
 on:
-  push:
+  pull_request:
     branches:
-      - "**"
+      - "main"
+    types: [closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency: ${{ github.workflow }}-${{github.ref}}
 
 jobs:
   build:
+    if: github.event.pull_request.merged && github.head_ref != 'changeset-release/main'
+
     runs-on: ubuntu-latest
     
     steps:
@@ -39,5 +49,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build application
-        run: pnpm run lint && pnpm run build
+      - name: Create release PR
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
