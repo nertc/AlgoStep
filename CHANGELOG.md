@@ -1,5 +1,11 @@
 # algostep
 
+## 0.1.4
+
+### Patch Changes
+
+- 88a9536: Update NPM secret and add manual dispatch to publish
+
 ## 0.1.3
 
 ### Patch Changes
