@@ -1,5 +1,11 @@
 # algostep
 
+## 0.1.5
+
+### Patch Changes
+
+- e0c9421: Add npmjs registry
+
 ## 0.1.4
 
 ### Patch Changes
