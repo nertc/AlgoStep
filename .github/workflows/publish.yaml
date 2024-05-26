@@ -1,41 +1,41 @@
 name: Publish
 on:
-  workflow_dispatch:
-  pull_request:
-    branches:
-      - "main"
-    types: [closed]
+    workflow_dispatch:
+    pull_request:
+        branches:
+            - 'main'
+        types: [closed]
 
 permissions:
-  contents: write
-  pull-requests: write
-  issues: write
+    contents: write
+    pull-requests: write
+    issues: write
 
 concurrency: ${{ github.workflow }}-${{github.ref}}
 
 jobs:
-  build:
-    if: github.event.pull_request.merged && github.head_ref == 'changeset-release/main'
+    publish:
+        if: github.event.pull_request.merged && github.head_ref == 'changeset-release/main'
 
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+        runs-on: ubuntu-latest
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          registry-url: 'https://registry.npmjs.org'
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          version: 9
-          run_install: false
+            - name: Install Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  registry-url: 'https://registry.npmjs.org'
 
-      - name: Publish Package
-        run: pnpm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            - uses: pnpm/action-setup@v3
+              name: Install pnpm
+              with:
+                  version: 9
+                  run_install: false
+
+            - name: Publish Package
+              run: pnpm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
